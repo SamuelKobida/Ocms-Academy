@@ -59,9 +59,9 @@ class Plugin extends PluginBase
         {
             $arrival->bindEvent('model.afterCreate', function () use ( $arrival) {
                 if ($arrival->dog) {
-                    \Log::info("{$arrival->name} arrived to work at {$arrival->arrival} with his dog!");
+                    \Log::info("{$arrival->user->name} arrived to work at {$arrival->arrival} with his dog!");
                 } else {
-                    \Log::info("{$arrival->name} arrived to work at {$arrival->arrival}!");
+                    \Log::info("{$arrival->user->name} arrived to work at {$arrival->arrival}!");
                 }
             });
         });
