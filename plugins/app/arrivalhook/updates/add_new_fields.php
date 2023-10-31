@@ -9,7 +9,7 @@ class AddNewFields extends Migration
     public function up()
     {
         Schema::table('app_arrival_arrivals', function (Blueprint $table) {
-            $table->boolean('Dog')->nullable();
+            $table->boolean('dog')->nullable();
         });
     }
 
@@ -17,7 +17,7 @@ class AddNewFields extends Migration
 {
     Schema::table('app_arrival_arrivals', function($table) {
         $table->dropColumn([
-            'Dog'
+            'dog'
         ]);
     });
 } 

@@ -46,8 +46,8 @@ class Plugin extends PluginBase
         
             $form->addFields([
 
-                'Dog' => [
-                    'label'   => 'Dog',
+                'dog' => [
+                    'label'   => 'dog',
                     'type' => 'checkbox',
                     'default' => 'false',
                 ],
@@ -56,13 +56,10 @@ class Plugin extends PluginBase
         });
 
         ArrivalModel::extend(function ($arrival)
-         /**
-         * Pravdepodobne ina metoda ako afterCreate aby to fungovalo kedže v tejto chvili model este nevie o dogovi ktory sa robi tesne predtym.
-         */
         {
             $arrival->bindEvent('model.afterCreate', function () use ( $arrival) {
                 if ($arrival->dog) {
-                    \Log::info("{$arrival->name} arrived to work at {$arrival->arrival} with his cute dog!");
+                    \Log::info("{$arrival->name} arrived to work at {$arrival->arrival} with his dog!");
                 } else {
                     \Log::info("{$arrival->name} arrived to work at {$arrival->arrival}!");
                 }

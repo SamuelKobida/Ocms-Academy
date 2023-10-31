@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use App\Arrival\Classes\Extend\UserExtend as UserExtend;
 
 /**
  * Arrival Plugin Information File
@@ -40,7 +41,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        UserExtend::extendUser();
     }
 
     /**

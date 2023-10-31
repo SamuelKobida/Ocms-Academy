@@ -3,17 +3,25 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    # id:
+    #     label: ID
+    #     disabled: true
 
-    name:
-        label: Name
-        type: text
+    # name:
+    #     label: Name
+    #     type: text
 
+    user:
+        label: User
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        prompt: Click on the button to find a user
+        
     arrival:
         label: Arrival
         type: datepicker
         mode: datetime
         useTimezone: true
+
+
 

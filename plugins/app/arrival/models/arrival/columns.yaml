@@ -3,13 +3,18 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
+    # id:
+    #     label: ID
+    #     searchable: true
 
-    name:
+    # name:
+    #     label: Name
+    #     type: text
+    user:
         label: Name
-        type: text
+        relation: user
+        select: name
+        searchable: true
 
     arrival:
         label: Arrival

@@ -2,12 +2,18 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Arrival\Models\Arrival;
+use App\Arrival\Http\Controllers\ArrivalController;
 
-Route::get('get_arrivals', function () {
-    return Arrival::all();
-});
 
-Route::post('post_arrival', function (Request $request) {
-    Arrival::create($request->all());
-    return "New arrival created";
-});
+    Route::middleware(['auth'])->group (function() 
+    {    
+        // ...
+    });
+
+    Route::get('arrivals', [ArrivalController::class, 'getArrivals']);
+
+
+
+
+    
+
